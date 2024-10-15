@@ -33,26 +33,26 @@
         const edgePairs = edgeInput.split(',');
 
         edgePairs.forEach(pair => {
-            const parts = pair.split('-').map(s => s.trim());  // Split by space
+            const parts = pair.split('-').map(s => s.trim());  
 
-            // Extract "from" and "to" nodes, and determine if weight is provided
+        
             const from = parts[0];
             const to = parts[1];
-            const weight = parts[2] ? parseInt(parts[2]) : null; // Use null for unweighted edges
+            const weight = parts[2] ? parseInt(parts[2]) : null;
 
-            // Create nodes if they don't exist
+          
             if (!adjList.has(from)) createNode(from);
             if (!adjList.has(to)) createNode(to);
 
-            // Add the edge
+          
             edges.push({ from, to, weight });
-            //adjList.get(from).push({ to, weight });
+          
 
             adjList.get(from).push({ node: to, weight });
 
-            // If it's an undirected graph, add the reverse edge as well
+          
             if (graphType === 'undirected') {
-                //adjList.get(to).push({ from, weight });
+              
                 adjList.get(to).push({ node: from, weight });
             }
         });
@@ -68,7 +68,7 @@
                 const startNode = nodes.find(n => n.label === edge.from);
                 const endNode = nodes.find(n => n.label === edge.to);
 
-                // Draw the line
+               
                 ctx.strokeStyle = 'lightgray';
                 ctx.lineWidth = 2;
                 ctx.beginPath();
@@ -76,7 +76,7 @@
                 ctx.lineTo(endNode.x, endNode.y);
                 ctx.stroke();
 
-                // Draw weight if it’s provided
+            
                 if (edge.weight !== null) {
                     const midX = (startNode.x + endNode.x) / 2;
                     const midY = (startNode.y + endNode.y) / 2;
@@ -85,7 +85,7 @@
                     ctx.fillText(edge.weight, midX, midY);
                 }
 
-                // Draw arrow if the graph is directed
+             
                 if (graphType === 'directed') {
                     const angle = Math.atan2(endNode.y - startNode.y, endNode.x - startNode.x);
                     const arrowLength = 15;
@@ -109,7 +109,7 @@
                 }
             });
 
-            // Draw nodes
+           
             nodes.forEach(node => {
                 ctx.fillStyle = node.color;
                 ctx.beginPath();

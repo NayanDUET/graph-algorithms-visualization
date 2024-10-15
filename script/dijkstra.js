@@ -130,13 +130,13 @@
                     const fromNode = nodes.find(n => n.label === path[i]);
                     const toNode = nodes.find(n => n.label === path[i + 1]);
 
-                    // Animate the drawing from the start node to the end node
-                    let progress = 0; // To track the progress of the animation
+                  
+                    let progress = 0; 
                     const animationStep = () => {
                         ctx.strokeStyle = 'green';
                         ctx.lineWidth = 2;
                         ctx.beginPath();
-                        // Calculate the current position based on progress
+                       
                         const currentX = fromNode.x + (toNode.x - fromNode.x) * progress;
                         const currentY = fromNode.y + (toNode.y - fromNode.y) * progress;
                         
@@ -144,18 +144,18 @@
                         ctx.lineTo(currentX, currentY);
                         ctx.stroke();
 
-                        progress += 0.01; // spreed of animation
+                        progress += 0.01; 
                         if (progress <= 1) {
-                            requestAnimationFrame(animationStep); // Continue the animation
+                            requestAnimationFrame(animationStep); 
                         } else {
-                            // Move to the next segment
+                          
                             i++;
-                            setTimeout(drawNextSegment, delay); // Delay before drawing the next segment
+                            setTimeout(drawNextSegment, delay); 
                         }
                     };
-                    animationStep(); // Start the animation for this segment
+                    animationStep(); 
                 }
             }
 
-            drawNextSegment(); // Initiate the first segment drawing
+            drawNextSegment();
         }
