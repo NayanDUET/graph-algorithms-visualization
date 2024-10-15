@@ -1,0 +1,17 @@
+#container {
+            display: flex;
+        }
+        #canvas {
+           border: 1px solid green;
+            background-color:white;
+            margin-top: 20px;
+        }
+        #controlPanel, #resultsPanel {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 10px;
+        }
+        #resultsPanel {
+            width: 100px;
+        }

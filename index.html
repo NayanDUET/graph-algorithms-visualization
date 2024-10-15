@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Dijkstra Algorithm Visualization with Extra Features</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>
+    <div id="container" class="container-fluid">
+    <div class="row">
+
+     <div class="col-sm-2">
+       
+                 <div id="controlPanel">
+                 <label for="edges">Edges (Format: from-to-weight):</label>
+               
+                 <textarea placeholder="e.g.,1-2-4, 1-3-1" class="form-control" id="edges" rows="5" id="comment"></textarea>
+                  
+                  <div class="radio">
+                    <p>Select Graph type</p>
+                  <label><input onclick="setGraphType('directed')" type="radio" name="optradio" checked>Directed Graph</label>
+                  </div>
+                  <div class="radio">
+                  <label><input onclick="setGraphType('undirected')" type="radio" name="optradio" checked>Undirected Graph</label>
+                  </div>
+
+
+                   <button type="button" class="btn btn-default" onclick="initializeGraph()">Draw Graph</button>
+
+                    <button type="button" class="btn btn-default" onclick="isBipartite()">Check Bipartite</button>
+                    <button type="button" class="btn btn-default" onclick="checkCycles()">Check Cycles</button>
+                    <button type="button" class="btn btn-default" onclick="StronglyConnected()">Check Strongly</button>
+                    <button type="button" class="btn btn-default" onclick="runKruskal()">Check MST</button>
+
+                <label for="source">Source Node:</label>
+                    <input class="form-control" type="text" id="source" placeholder="e.g., 1">
+                    <label for="destination">Destination Node:</label>
+                    <input class="form-control" type="text" id="destination" placeholder="e.g., 14">
+                    <button type="button" class="btn btn-default" onclick="findAndDisplayPath()">Shortest Path</button>
+            
+        </div>
+        
+
+     </div>
+
+     <div class="col-sm-8">
+            <canvas width="600" height="730" id="canvas"></canvas>
+     </div>
+
+          <div class="col-sm-2">
+                  <div id="resultsPanel">
+                    <h3>Results</h3>
+                    <div id="resultBipartite">Bipartite: </div>
+                    <div id="resultCycle">Cycle: </div>
+                    <div id="topoSort">TopoSort: </div>
+                    <div id="resultMST">Minimum Spanning Tree: </div>
+                    <div id="resultStronglyConnected">StronglyConnected :</div>
+                    <div id="resultPath">Shortest Path: </div>
+                    <div id="resultCost">Cost: </div>
+                </div>
+            </div>
+     </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="script/initializationNode.js"></script>
+    <script type="text/javascript" src="script/checkCycles.js"></script>
+    <script type="text/javascript" src="script/dijkstra.js"></script>
+    <script type="text/javascript" src="script/checkCyclesUndirected.js"></script>
+    <script type="text/javascript" src="script/Kruskal.js"></script>
+    <script type="text/javascript" src="script/detectCycleKahns.js"></script>
+    <script type="text/javascript" src="script/Bipartite.js"></script>
+    <script type="text/javascript" src="script/StronglyConnected.js"></script>
+    <script type="text/javascript" src="script/draggedNode.js"></script>
+</body>
+</html>
