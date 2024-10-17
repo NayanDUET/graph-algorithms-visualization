@@ -33,7 +33,7 @@
 
 
                    <button type="button" class="btn btn-default" onclick="initializeGraph()">Draw Graph</button>
-
+                   <button type="button" class="btn btn-default" onclick="location.reload()">Refresh</button>
                     <button type="button" class="btn btn-default" onclick="isBipartite()">Check Bipartite</button>
                     <button type="button" class="btn btn-default" onclick="checkCycles()">Check Cycles</button>
                     <button type="button" class="btn btn-default" onclick="StronglyConnected()">Check Strongly</button>
@@ -65,9 +65,120 @@
                     <div id="resultPath">Shortest Path: </div>
                     <div id="resultCost">Cost: </div>
                 </div>
+               <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+                  Project Details
+                </button>
             </div>
      </div>
     </div>
+
+        <!-- Button trigger modal -->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title" id="exampleModalLabel">Graph Algorithms Visualization</h1>
+                
+              </div>
+              <div class="modal-body">
+                  <section>
+                        <p>
+                            <strong>Graph Algorithms Visualization</strong> is an interactive web-based application that helps users explore and understand various graph algorithms through visual representation. This project is designed to make learning graph algorithms easier by offering an intuitive, interactive interface that allows users to visualize complex operations on graphs.
+                        </p>
+                        <p>
+                            The application leverages several popular algorithms, including Kruskal's, Dijkstra's, Kahn's, Kosaraju's, Disjoint Set Union (DSU), and others. Visualization is implemented using the HTML5 Canvas API for rendering nodes and edges, with added interactivity for dragging nodes and modifying edges. The design is further enhanced with Bootstrap CSS to ensure a clean and responsive layout.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Features</h2>
+
+                        <h3>Algorithm Implementations:</h3>
+                        <ul>
+                            <li><strong>Kruskal's Algorithm:</strong> Visualizes the minimum spanning tree (MST), highlighting the selected edges in the MST with animation.</li>
+                            <li><strong>Dijkstra's Algorithm:</strong> Displays shortest paths from a source node to all reachable nodes with step-by-step visuals.</li>
+                            <li><strong>Kahn's Algorithm:</strong> Provides topological sorting of directed acyclic graphs (DAG) and cycle detection in graphs.</li>
+                            <li><strong>Kosaraju's Algorithm:</strong> Detects and visualizes strongly connected components in directed graphs.</li>
+                            <li><strong>Disjoint Set Union (DSU):</strong> Shows union-find operations, useful in Kruskal’s MST algorithm.</li>
+                        </ul>
+
+                        <h3>Graph Operations:</h3>
+                        <ul>
+                            <li><strong>Canvas-based Rendering:</strong> Nodes and edges are drawn using Canvas API for smooth visuals.</li>
+                            <li><strong>Draggable Nodes:</strong> Users can drag nodes to adjust layouts dynamically.</li>
+                            <li><strong>Edge Creation:</strong> Connect nodes by adding edges with optional weights, both for directed and undirected graphs.</li>
+                            <li><strong>Interactive Result Display:</strong> Results for cycle detection, bipartite checking, and topological sort are displayed within the HTML interface.</li>
+                        </ul>
+
+                        <h3>Responsive Design:</h3>
+                        <ul>
+                            <li><strong>Bootstrap Integration:</strong> Provides a clean layout, making the UI easy to navigate and compatible across devices.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Prerequisites</h2>
+                        <p>
+                            A modern web browser with JavaScript enabled is needed to fully support the HTML5 Canvas API and Bootstrap.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Usage</h2>
+                        <ul>
+                            <li><strong>Initialize Nodes and Edges:</strong> Use the interface to add edges by entering values and by clicking on the draw button. It automatically detects weighted and unweighted graphs.</li>
+                            <li><strong>Select and Run Algorithm:</strong> Choose an algorithm from the left-side button and press to start the visualization.</li>
+                            <li><strong>Dynamic Results:</strong> Results, such as cycle detection and bipartite check results, are displayed in the right-side Result section within the interface.</li>
+                            <li><strong>Reset for New Graphs:</strong> Use the browser refresh to clear results and create a new graph layout.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Available Algorithms and Their Visualization</h2>
+                        <ul>
+                            <li><strong>Kruskal’s Algorithm:</strong> Visualizes the Minimum Spanning Tree (MST) by highlighting selected edges with animation and displaying Disjoint Set Union (DSU) operations.</li>
+                            <li><strong>Dijkstra’s Algorithm:</strong> Computes shortest paths from a source, showing paths with animation.</li>
+                            <li><strong>Kahn's Algorithm:</strong> Shows topological ordering for Directed Acyclic Graphs (DAG).</li>
+                            <li><strong>Kosaraju's Algorithm:</strong> Detects and displays strongly connected components in directed graphs.</li>
+                            <li><strong>Bipartite Check:</strong> Determines if the graph is bipartite, with the result shown within the HTML interface.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Technologies Used</h2>
+                        <ul>
+                            <li><strong>JavaScript:</strong> The core language used to implement algorithms and create an interactive interface.</li>
+                            <li><strong>HTML5 Canvas API:</strong> Renders nodes, edges, and algorithmic visualizations on the canvas.</li>
+                            <li><strong>CSS (Bootstrap):</strong> Provides responsive design, making the UI visually appealing and easy to use.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Graph Drawing and Layout Design</h2>
+                        <ul>
+                            <li><strong>Canvas API for Drawing:</strong> Nodes and edges are dynamically drawn and updated on the canvas.</li>
+                            <li><strong>Draggable Nodes:</strong> Nodes can be dragged to adjust the graph layout visually.</li>
+                            <li><strong>Graph Options:</strong> The project supports both directed and undirected graphs, with weighted edges for algorithms that require it.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Contributing</h2>
+                        <p>
+                            Contributions are welcome! Feel free to open issues or submit pull requests for new features, optimizations, or bug fixes.
+                        </p>
+                    </section>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
 
 
 
@@ -81,6 +192,11 @@
     <script type="text/javascript" src="script/StronglyConnected.js"></script>
     <script type="text/javascript" src="script/draggedNode.js"></script>
 </body>
+<footer class="footer">
+    <p>&copy; 2024 <a href="https://github.com/NayanDUET" target="_blank">NayanDUET</a>. All rights reserved.</p>
+</footer>
+
+
 </html>
 
 
