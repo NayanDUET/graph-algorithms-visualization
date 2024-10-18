@@ -21,6 +21,15 @@
 
 
         function runKruskal() {
+
+            if(weightType === 'unweighted')
+            {
+               calljaquery2();
+
+               return;
+               
+            }
+
             const mstEdges = [];
             let totalWeight = 0;
 
@@ -102,4 +111,22 @@
             }
 
             draw();
+        }
+
+        function calljaquery2()
+        {
+           $(document).ready(function() {
+        
+            const alertBox = $("#alertBox2");
+
+            alertBox.show().addClass("show");
+
+            setTimeout(function() {
+                alertBox.removeClass("show"); 
+                setTimeout(function() {
+                    alertBox.hide();
+                }, 500); 
+            }, 3000);
+        
+          });
         }

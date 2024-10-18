@@ -1,5 +1,11 @@
  function StronglyConnected()
         {
+             if (graphType === 'undirected') {
+                    
+                    calljaquery();
+                    return;
+                }
+
             const result = isStronglyConnected();
             document.getElementById('resultStronglyConnected').innerText = 
                 result ? "StronglyConnected : The graph is strongly connected." : "StronglyConnected : The graph is not strongly connected.";
@@ -53,4 +59,23 @@
 
            
             return visited.size === nodesx.length;
+        }
+
+
+        function calljaquery()
+        {
+           $(document).ready(function() {
+        
+            const alertBox = $("#alertBox");
+
+            alertBox.show().addClass("show");
+
+            setTimeout(function() {
+                alertBox.removeClass("show"); 
+                setTimeout(function() {
+                    alertBox.hide();
+                }, 500); 
+            }, 3000);
+        
+    });
         }

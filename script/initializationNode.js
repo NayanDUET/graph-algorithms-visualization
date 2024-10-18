@@ -5,6 +5,7 @@
        
         const adjList = new Map();
         let graphType = 'undirected'; // Default to undirected
+        weightType = 'weighted';
 
 
          const nodesx = [];
@@ -12,7 +13,7 @@
 
         function setGraphType(type) {
             graphType = type;
-           // alert(`Graph set to ${type}.`);
+           
         }
 
         function createNode(label) {
@@ -40,6 +41,8 @@
             const to = parts[1];
             const weight = parts[2] ? parseInt(parts[2]) : null;
 
+            
+
           
             if (!adjList.has(from)) createNode(from);
             if (!adjList.has(to)) createNode(to);
@@ -56,6 +59,8 @@
                 adjList.get(to).push({ node: from, weight });
             }
         });
+
+        
 
         draw();
     }
@@ -78,11 +83,17 @@
 
             
                 if (edge.weight !== null) {
+
                     const midX = (startNode.x + endNode.x) / 2;
                     const midY = (startNode.y + endNode.y) / 2;
                     ctx.fillStyle = 'lightgrays';
                     ctx.font = '14px Arial';
                     ctx.fillText(edge.weight, midX, midY);
+                }
+                
+                if(edge.weight === null)
+                {
+                    weightType = 'unweighted';
                 }
 
              

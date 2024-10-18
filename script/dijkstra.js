@@ -1,4 +1,12 @@
    function findAndDisplayPath() {
+           
+           if(weightType === 'unweighted')
+            {
+               calljaquery3();
+               return;
+               
+            }
+
             const source = document.getElementById('source').value;
             const destination = document.getElementById('destination').value;
             const result = dijkstra(source, destination);
@@ -158,4 +166,24 @@
             }
 
             drawNextSegment();
+        }
+
+
+
+     function calljaquery3()
+        {
+           $(document).ready(function() {
+        
+            const alertBox = $("#alertBox3");
+
+            alertBox.show().addClass("show");
+
+            setTimeout(function() {
+                alertBox.removeClass("show"); 
+                setTimeout(function() {
+                    alertBox.hide();
+                }, 500); 
+            }, 3000);
+        
+          });
         }
